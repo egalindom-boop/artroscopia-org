@@ -1,0 +1,27 @@
+name: Desplegar sitio desde zip
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descomprimir sitio.zip
+        run: |
+          unzip -o sitio.zip -d .
+          rm sitio.zip
+
+      - name: Publicar
+        run: |
+          git config user.name "Robot Artroscopia"
+          git config user.email "robot@artroscopia.org"
+          git add -A
+          git commit -m "Sitio completo desde zip" || exit 0
+          git pull --rebase -X ours origin main
+          git push origin main
