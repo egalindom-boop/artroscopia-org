@@ -1,0 +1,48 @@
+# Formato: categoria|tema sugerido
+# Categorías válidas: rodilla, hombro, tobillo, cadera, muneca, instrumental, gestion
+rodilla|Sutura meniscal en asa de cubo: reducción y fijación paso a paso
+hombro|Reparación del subescapular: el tendón olvidado del manguito
+tobillo|Artroscopia de tobillo en el bailarín: os trigonum y flexor largo del dedo gordo
+cadera|Cirugía de revisión tras artroscopia de cadera fallida: causas y opciones
+muneca|Artroscopia radiocarpiana en la muñeca del deportista de raqueta
+instrumental|Bombas de irrigación en artroscopia: presión, flujo y seguridad
+gestion|Cómo organizar la consulta postoperatoria de una unidad de artroscopia
+rodilla|Osteotomía y artroscopia combinadas en la rodilla varo del paciente joven
+hombro|Inestabilidad posterior de hombro: diagnóstico y reparación artroscópica
+tobillo|Lesiones sindesmales y artroscopia: cuándo mirar dentro
+cadera|Choque isquiofemoral y otras causas extraarticulares de dolor de cadera
+muneca|Rizartrosis y artroscopia trapeciometacarpiana: indicaciones emergentes
+instrumental|Radiofrecuencia en artroscopia: coblación, temperaturas y buenas prácticas
+gestion|Consentimiento informado en artroscopia: errores que acaban en reclamación
+rodilla|Injertos meniscales y sustitutos: a quién y cuándo
+hombro|Artropatía de manguito: qué puede y qué no puede ofrecer la artroscopia
+tobillo|Retorno al deporte tras Broström artroscópico: criterios objetivos
+cadera|Anclajes sin nudos en la reparación del labrum: ventajas técnicas
+muneca|Artrolisis artroscópica de muñeca en la rigidez postraumática
+instrumental|Ópticas de un solo uso frente a reutilizables: coste por caso real
+gestion|Indicadores de calidad en una unidad de artroscopia: qué medir
+rodilla|Manejo del derrame y la hemartrosis tras artroscopia de rodilla
+hombro|Cirugía artroscópica del hombro en el paciente mayor de 70 años
+tobillo|Artroscopia de la articulación subastragalina: indicaciones actuales
+cadera|Rehabilitación precoz tras femoroplastia: qué proteger y qué mover
+muneca|Fijación artroscópica del escafoides: técnica percutánea asistida
+instrumental|Vídeo quirúrgico 4K: archivo, edición y uso docente responsable
+gestion|Telemedicina en el seguimiento postoperatorio de artroscopia
+rodilla|Condrocitos, membranas y células: terapias del cartílago con evidencia
+hombro|Latarjet artroscópico frente a abierto: estado de la técnica
+tobillo|Complicaciones neurológicas de la artroscopia de tobillo y cómo evitarlas
+cadera|Artroscopia de cadera en adolescentes: epifisiolisis y CFA juvenil
+muneca|Gangliones volares y artroscopia: límites de la técnica
+instrumental|Trazabilidad del instrumental quirúrgico: RFID y esterilización
+gestion|Lista de verificación quirúrgica adaptada a cirugía artroscópica
+rodilla|LCA en el futbolista profesional: plazos reales de retorno en 2026
+hombro|Manejo del dolor postoperatorio sin opioides en cirugía de hombro
+tobillo|Artroscopia en el esguince que no cura: lesiones ocultas
+cadera|Bloqueos regionales en artroscopia de cadera: opciones y evidencia
+muneca|La muñeca del escalador: lesiones por sobrecarga y artroscopia
+instrumental|Inteligencia artificial en la torre de artroscopia: qué hay de real
+gestion|Facturación a aseguradoras en cirugía artroscópica: códigos y errores
+gestion|IA en artroscopia y en la clinica: aplicaciones reales en 2026
+gestion|Software con gestion de cirugias y hospitalizacion: que necesita una unidad de artroscopia
+instrumental|IA en la planificacion quirurgica artroscopica: de la RM al plan de portales
+gestion|Programa medico para traumatologia: criterios de eleccion y comparativas

@@ -1,0 +1,193 @@
+/* Artroscopia.org — Revista de cirugía artroscópica */
+:root{
+  --tinta:#0E1B1E;
+  --tinta-suave:#3D4F52;
+  --gris:#55666A;
+  --hueso:#F6F4EE;
+  --blanco:#FFFFFF;
+  --teal:#0B6E62;
+  --teal-oscuro:#084D45;
+  --teal-claro:#E2F1EE;
+  --coral:#AD3B14;--coral-vivo:#E4572E;
+  --coral-claro:#FCEAE3;
+  --ambar:#8A5A0B;
+  --ambar-claro:#FBF0DC;
+  --borde:#E3E0D7;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--tinta);background:var(--hueso);line-height:1.65;font-size:16px}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--teal);text-decoration:none}
+a:hover{color:var(--teal-oscuro)}
+.contenedor{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- Cabecera ---------- */
+.barra-superior{background:var(--tinta);color:#9FB3B0;font-size:12.5px}
+.barra-superior .contenedor{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px}
+.barra-superior a{color:#C9D6D4;margin-left:16px}
+.barra-superior a:hover{color:#fff}
+.cabecera{background:var(--blanco);border-bottom:1px solid var(--borde);text-align:center;padding:30px 24px 20px}
+.marca{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,52px);letter-spacing:-.5px;color:var(--tinta);line-height:1}
+.marca a{color:var(--tinta)}
+.marca .punto-org{color:var(--teal)}
+.lema{margin-top:8px;font-size:13.5px;color:var(--gris);letter-spacing:.12em;text-transform:uppercase}
+.nav-principal{background:var(--blanco);border-bottom:3px solid var(--teal);position:sticky;top:0;z-index:50;box-shadow:0 1px 0 var(--borde)}
+.nav-principal ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:2px}
+.nav-principal a{display:block;padding:13px 15px;font-size:14px;font-weight:600;color:var(--tinta);letter-spacing:.02em}
+.nav-principal a:hover,.nav-principal a.activo{color:var(--teal);box-shadow:inset 0 -3px 0 var(--coral-vivo)}
+.nav-principal a.nav-destacado{color:var(--coral)}
+
+/* ---------- Ticker ---------- */
+.ticker{background:var(--teal-oscuro);color:#DFF0ED;font-size:13px;overflow:hidden}
+.ticker .contenedor{display:flex;align-items:center;gap:14px;padding-top:8px;padding-bottom:8px}
+.ticker-etiqueta{background:var(--coral);color:#fff;font-weight:700;font-size:11px;letter-spacing:.1em;padding:3px 10px;border-radius:3px;white-space:nowrap}
+.ticker-texto{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker-texto a{color:#DFF0ED}
+.ticker-texto a:hover{color:#fff;text-decoration:underline}
+
+/* ---------- Etiquetas y kickers ---------- */
+.kicker{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.kicker.coral{color:var(--coral)}
+.kicker.ambar{color:var(--ambar)}
+.pildora{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:3px;background:var(--teal-claro);color:var(--teal-oscuro)}
+.pildora.coral{background:var(--coral-claro);color:#8A2E12}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--blanco);padding:34px 0;border-bottom:1px solid var(--borde)}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:36px}
+.hero-principal .foto-marco{border-radius:8px;overflow:hidden;background:var(--tinta)}
+.hero-principal h2{font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:600;line-height:1.18;margin:12px 0 10px}
+.hero-principal h2 a{color:var(--tinta)}
+.hero-principal h2 a:hover{color:var(--teal)}
+.entradilla{color:var(--tinta-suave);font-size:16.5px}
+.meta{font-size:12.5px;color:var(--gris);margin-top:10px}
+.hero-lista{display:flex;flex-direction:column;gap:0}
+.hero-item{padding:16px 0;border-bottom:1px solid var(--borde)}
+.hero-item:first-child{padding-top:4px}
+.hero-item h3{font-family:var(--serif);font-size:18.5px;font-weight:600;line-height:1.3;margin-top:5px}
+.hero-item h3 a{color:var(--tinta)}
+.hero-item h3 a:hover{color:var(--teal)}
+
+/* ---------- Secciones portada ---------- */
+.franja{padding:44px 0}
+.franja.alterna{background:var(--blanco);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+.titulo-seccion{display:flex;align-items:baseline;justify-content:space-between;border-bottom:3px solid var(--tinta);padding-bottom:10px;margin-bottom:24px}
+.titulo-seccion h2{font-family:var(--serif);font-size:26px;font-weight:600}
+.titulo-seccion h2 a{color:var(--tinta)}
+.titulo-seccion .ver-todo{font-size:13px;font-weight:600;color:var(--coral)}
+.rejilla-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.rejilla-2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.tarjeta{background:var(--blanco);border:1px solid var(--borde);border-radius:8px;overflow:hidden;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}
+.franja.alterna .tarjeta{background:var(--hueso)}
+.tarjeta:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(14,27,30,.12)}
+.tarjeta .foto-marco{aspect-ratio:16/9;overflow:hidden}
+.tarjeta-cuerpo{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tarjeta h3{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.28}
+.tarjeta h3 a{color:var(--tinta)}
+.tarjeta h3 a:hover{color:var(--teal)}
+.tarjeta p{font-size:14px;color:var(--tinta-suave)}
+.tarjeta .meta{margin-top:auto}
+
+/* ---------- Bloque especialidades ---------- */
+.especialidades{background:var(--tinta);color:#fff;padding:52px 0}
+.especialidades .titulo-seccion{border-color:var(--teal);}
+.especialidades .titulo-seccion h2{color:#fff}
+.rejilla-esp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.esp-tarjeta{background:#152A2E;border:1px solid #244247;border-radius:8px;padding:24px;transition:border-color .18s,transform .18s}
+.esp-tarjeta:hover{border-color:var(--teal);transform:translateY(-3px)}
+.esp-tarjeta h3{font-family:var(--serif);font-size:21px;font-weight:600;margin:10px 0 8px}
+.esp-tarjeta h3 a{color:#fff}
+.esp-tarjeta h3 a:hover{color:#7FD1C5}
+.esp-tarjeta p{font-size:13.5px;color:#A9BDBA;line-height:1.6}
+.esp-tarjeta .num{font-family:var(--serif);font-size:15px;color:#F0997B;font-weight:600}
+
+/* ---------- Página pilar / artículo ---------- */
+.miga{font-size:12.5px;color:var(--gris);padding:16px 0 0}
+.miga a{color:var(--gris)}
+.miga a:hover{color:var(--teal)}
+.articulo-cabecera{background:var(--blanco);border-bottom:1px solid var(--borde);padding:26px 0 34px}
+.articulo-cabecera h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:600;line-height:1.15;margin:12px 0 14px;letter-spacing:-.5px}
+.articulo-cabecera .entradilla{max-width:820px;font-size:18px}
+.cuerpo-articulo{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:44px;padding:40px 0 60px}
+.prosa{max-width:760px}
+.prosa>p{margin-bottom:1.25em;color:#22343A;font-size:16.5px}
+.prosa h2{font-family:var(--serif);font-size:27px;font-weight:600;margin:1.6em 0 .6em;line-height:1.25}
+.prosa h3{font-family:var(--serif);font-size:21px;font-weight:600;margin:1.4em 0 .5em}
+.prosa ul,.prosa ol{margin:0 0 1.25em 1.3em;color:#22343A}
+.prosa li{margin-bottom:.45em}
+.prosa .foto-marco{border-radius:8px;overflow:hidden;margin:1.6em 0}
+.prosa .pie-foto{font-size:12.5px;color:var(--gris);margin-top:8px;text-align:center}
+.destacado{border-left:4px solid var(--coral-vivo);background:var(--blanco);padding:18px 22px;margin:1.6em 0;font-family:var(--serif);font-size:19px;line-height:1.45;color:var(--tinta)}
+.caja-clave{background:var(--teal-claro);border:1px solid #BFDFD9;border-radius:8px;padding:22px 24px;margin:1.6em 0}
+.caja-clave h3{margin-top:0!important;color:var(--teal-oscuro)}
+.caja-clave ul{margin-bottom:0}
+.tabla-envoltura{overflow-x:auto;margin:1.6em 0}
+table.tabla{width:100%;border-collapse:collapse;background:var(--blanco);font-size:14px}
+table.tabla th{background:var(--tinta);color:#fff;text-align:left;padding:10px 14px;font-weight:600}
+table.tabla td{padding:10px 14px;border-bottom:1px solid var(--borde);vertical-align:top}
+table.tabla tr:nth-child(even) td{background:var(--hueso)}
+
+/* ---------- Barra lateral ---------- */
+.lateral>div{background:var(--blanco);border:1px solid var(--borde);border-radius:8px;padding:22px;margin-bottom:22px}
+.lateral h3{font-family:var(--serif);font-size:18px;font-weight:600;border-bottom:2px solid var(--teal);padding-bottom:8px;margin-bottom:14px}
+.lateral ul{list-style:none}
+.lateral li{padding:8px 0;border-bottom:1px solid var(--borde);font-size:14px;line-height:1.4}
+.lateral li:last-child{border-bottom:0}
+.lateral a{color:var(--tinta);font-weight:500}
+.lateral a:hover{color:var(--teal)}
+.caja-cta{background:var(--teal-oscuro)!important;border-color:var(--teal-oscuro)!important;color:#DFF0ED}
+.caja-cta h3{color:#fff;border-color:var(--coral)}
+.caja-cta p{font-size:13.5px;margin-bottom:12px}
+.caja-cta a.boton{display:block;text-align:center;background:var(--coral);color:#fff;font-weight:700;font-size:14px;padding:11px;border-radius:6px}
+.caja-cta a.boton:hover{background:#8F300F}
+
+/* ---------- Listado artículos en pilar ---------- */
+.lista-articulos{list-style:none;margin:1.2em 0}
+.lista-articulos li{background:var(--blanco);border:1px solid var(--borde);border-radius:8px;padding:16px 20px;margin-bottom:12px;transition:border-color .15s}
+.lista-articulos li:hover{border-color:var(--teal)}
+.lista-articulos a{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--tinta)}
+.lista-articulos a:hover{color:var(--teal)}
+.lista-articulos .meta{margin-top:4px}
+
+/* ---------- Pie ---------- */
+.pie{background:var(--tinta);color:#A9BDBA;margin-top:0;padding:48px 0 0}
+.pie h4{color:#fff;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+.pie-rejilla{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding-bottom:36px}
+.pie ul{list-style:none}
+.pie li{margin-bottom:9px;font-size:13.5px}
+.pie a{color:#A9BDBA}
+.pie a:hover{color:#fff}
+.pie-marca{font-family:var(--serif);font-size:22px;color:#fff;font-weight:600}
+.pie-marca .punto-org{color:#5BB8A9}
+.pie-legal{border-top:1px solid #244247;padding:18px 0;font-size:12.5px;text-align:center;color:#93A8A5}
+.pie-legal a{color:#A7BAB7;margin:0 8px}
+
+/* ---------- Foto marco (placeholder hasta subir fotos) ---------- */
+.foto-marco{position:relative;background:var(--teal-claro)}
+.foto-marco img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- Banner de cookies ---------- */
+#banner-cookies{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--tinta);color:#C9D6D4;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;box-shadow:0 -4px 18px rgba(0,0,0,.25)}
+.banner-cookies-texto{font-size:13px;line-height:1.55;max-width:760px}
+.banner-cookies-texto a{color:#7FD1C5;text-decoration:underline}
+.banner-cookies-botones{display:flex;gap:10px}
+#banner-cookies button{font-family:var(--sans);font-size:13.5px;font-weight:600;padding:10px 22px;border-radius:6px;cursor:pointer;border:1px solid #4A6367;background:transparent;color:#C9D6D4}
+#banner-cookies button:hover{color:#fff;border-color:#7FD1C5}
+#banner-cookies #cookies-aceptar{background:var(--teal);border-color:var(--teal);color:#fff}
+#banner-cookies #cookies-aceptar:hover{background:var(--teal-oscuro)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:960px){
+  .hero-grid,.cuerpo-articulo{grid-template-columns:1fr}
+  .rejilla-3,.rejilla-esp{grid-template-columns:repeat(2,1fr)}
+  .pie-rejilla{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .rejilla-3,.rejilla-2,.rejilla-esp{grid-template-columns:1fr}
+  .barra-superior .contenedor{flex-direction:column;gap:4px}
+  .nav-principal a{padding:11px 10px;font-size:13px}
+  .pie-rejilla{grid-template-columns:1fr}
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+<rect width="800" height="450" fill="#0E1B1E"/>
+<circle cx="620" cy="110" r="170" fill="none" stroke="#0B6E62" stroke-width="2" opacity="0.55"/>
+<circle cx="620" cy="110" r="120" fill="none" stroke="#0B6E62" stroke-width="1.5" opacity="0.4"/>
+<circle cx="620" cy="110" r="70" fill="none" stroke="#5BB8A9" stroke-width="1.5" opacity="0.5"/>
+<circle cx="620" cy="110" r="8" fill="#E4572E"/>
+<path d="M60 390 L300 200 L340 215 L120 400 Z" fill="#152A2E" stroke="#244247"/>
+<line x1="300" y1="200" x2="612" y2="116" stroke="#5BB8A9" stroke-width="3" stroke-linecap="round"/>
+<rect x="60" y="60" width="46" height="6" fill="#E4572E"/>
+<text x="60" y="110" font-family="Georgia,serif" font-size="40" fill="#FFFFFF">Muñeca</text>
+<text x="60" y="140" font-family="Arial,sans-serif" font-size="15" fill="#5BB8A9" letter-spacing="4">ARTROSCOPIA.ORG</text>
+<text x="60" y="360" font-family="Arial,sans-serif" font-size="12" fill="#3D4F52">Imagen provisional — sustituir por fotografía</text>
+</svg>

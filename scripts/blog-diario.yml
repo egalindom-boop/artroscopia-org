@@ -1,0 +1,33 @@
+# Copiar este fichero en la ruta .github/workflows/blog-diario.yml del repositorio
+# (crear con "Add file → Create new file" pegando la ruta completa como nombre,
+#  el arrastre de carpetas que empiezan por punto falla en la web de GitHub)
+name: Blog diario artroscopia.org
+
+on:
+  schedule:
+    - cron: '17 7 * * *'    # 07:17 UTC — artículo de la mañana
+    - cron: '17 15 * * *'   # 15:17 UTC — artículo de la tarde
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generar artículo
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/generar_articulo.py
+
+      - name: Publicar cambios
+        run: |
+          git config user.name "Robot Artroscopia"
+          git config user.email "robot@artroscopia.org"
+          git add -A
+          git commit -m "Artículo diario automático" || exit 0
+          git pull --rebase -X ours origin main
+          git push origin main
