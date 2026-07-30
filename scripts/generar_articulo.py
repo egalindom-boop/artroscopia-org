@@ -31,7 +31,7 @@ def elegir_tema():
     ruta_usados = os.path.join(RAIZ, 'temas_usados.json')
     usados = json.load(io.open(ruta_usados, encoding='utf-8')) if os.path.exists(ruta_usados) else []
     pendientes = [t for t in temas if t not in usados]
-    if not pendientes:          # se agotó la lista: reiniciar rotación
+    if not pendientes:
         usados, pendientes = [], temas
     tema = pendientes[0]
     usados.append(tema)
@@ -51,8 +51,6 @@ def elegir_imagen(categoria):
     contador[categoria] = n + 1
     io.open(ruta, 'w', encoding='utf-8').write(json.dumps(contador, indent=1))
     return img
-
-
 
 
 def regla_enlaces(categoria):
@@ -81,7 +79,7 @@ def llamar_claude(categoria, titulo_sugerido):
         "===CUERPO===\n(HTML: 3-5 <h2>, párrafos <p>, una <div class=\"caja-clave\"><h3>...</h3><ul>...</ul></div>, "
         "una <blockquote class=\"destacado\">«...»</blockquote>. Incluye un enlace interno a %s. "
         "%s"
-        "PROHIBIDO usar la raya larga (guion em, —) o el guion en (-) largo: usa comas, dos puntos o parentesis. "
+        "PROHIBIDO usar la raya larga (guion em) o guiones largos: usa comas, dos puntos o parentesis. "
         "Nunca menciones XClinics ni inventes citas de autores reales con cifras.)\n"
         "===FIN===" % (nombre_seccion, titulo_sugerido, SECCIONES[categoria][1], regla_enlaces(categoria))
     )
@@ -93,7 +91,10 @@ def llamar_claude(categoria, titulo_sugerido):
         "https://api.anthropic.com/v1/messages", data=cuerpo,
         headers={"x-api-key": API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json"})
     respuesta = json.load(urllib.request.urlopen(peticion, timeout=180))
-    return respuesta["content"][0]["text"]
+    texto = "".join(b.get("text", "") for b in respuesta.get("content", []) if b.get("type") == "text")
+    if not texto:
+        raise ValueError("respuesta sin bloque de texto: %s" % str(respuesta)[:300])
+    return texto
 
 
 def extraer(texto, marca):
@@ -144,7 +145,6 @@ def generar():
     os.makedirs(destino, exist_ok=True)
     io.open(os.path.join(destino, 'index.html'), 'w', encoding='utf-8').write(pagina)
 
-    # Sitemap
     ruta_mapa = os.path.join(RAIZ, 'sitemap.xml')
     mapa = io.open(ruta_mapa, encoding='utf-8').read()
     entrada = ' <url><loc>https://artroscopia.org/%s/</loc><lastmod>%s</lastmod></url>\n' % (slug, fecha_iso)
@@ -152,7 +152,6 @@ def generar():
         mapa = mapa.replace('</urlset>', entrada + '</urlset>')
         io.open(ruta_mapa, 'w', encoding='utf-8').write(mapa)
 
-    # Ticker de portada: el nuevo artículo entra el primero, se conservan los 2 siguientes
     ruta_portada = os.path.join(RAIZ, 'index.html')
     portada = io.open(ruta_portada, encoding='utf-8').read()
     m = re.search(r'(<span class="ticker-texto">)(.*?)(</span>)', portada, re.S)
