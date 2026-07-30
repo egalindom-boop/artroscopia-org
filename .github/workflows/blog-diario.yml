@@ -1,0 +1,30 @@
+name: Blog diario artroscopia.org
+
+on:
+  schedule:
+    - cron: '17 7 * * *'
+    - cron: '17 15 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generar articulo
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/generar_articulo.py
+
+      - name: Publicar cambios
+        run: |
+          git config user.name "Robot Artroscopia"
+          git config user.email "robot@artroscopia.org"
+          git add -A
+          git commit -m "Articulo diario automatico" || exit 0
+          git pull --rebase -X ours origin main
+          git push origin main
