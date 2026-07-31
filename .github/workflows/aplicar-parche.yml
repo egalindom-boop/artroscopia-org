@@ -1,0 +1,29 @@
+name: Aplicar parche
+on:
+  workflow_dispatch:
+
+jobs:
+  parche:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descomprimir parche sobre el sitio
+        run: |
+          set -e
+          ls -lh parche/
+          mkdir -p /tmp/p
+          for z in parche/*.bin; do unzip -q -o "$z" -d /tmp/p; done
+          find /tmp/p -type f | wc -l
+          rsync -a /tmp/p/ ./
+          rm -rf parche
+
+      - name: Publicar
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Aplicar parche de accesibilidad y rendimiento" || echo "sin cambios"
+          git push
